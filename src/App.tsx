@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
 import { ethers, Signer } from 'ethers';
-import { Monster as _Monster,Game as _Game } from './contracts';
+import { Game as _Game } from './contracts';
 
 import Header from './components/Header';
 import Enemy from './components/Master';
-import Task from './components/Task';
+import Mint from './components/Mint';
 import Tips from './components/Tips';
 
 function App() {
@@ -52,8 +52,7 @@ function App() {
     try {
       let tx:any;
       if(nav === 'monster'){
-        let {id,odds,reward,xp,hp,name} = inputData;
-        tx = await _Monster(signer).editEnemy(id, odds,reward,xp, hp, name);
+ 
       }else{
         let {id,odds,reward} = inputData;
         tx = await _Game(signer).editTask(id, odds,reward);
@@ -76,11 +75,8 @@ function App() {
   return (
     <React.Fragment>
       <Header account={account} balance={balance} />
-     
-      <div style={{ textAlign: 'center' }}>
-        <button>Mint</button>
-      </div>
-
+    
+      <Mint/>
       <Tips />
 
     </React.Fragment>

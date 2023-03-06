@@ -4,9 +4,9 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background: #1D1E25;
+  background: #000000;
   min-width: 750px;
-
+  cursor: url(./assets/hand-cursor.png), pointer;
 }
 
 
@@ -14,7 +14,6 @@ body {
   color: cornflowerblue;
   font-size: 30px;
   font-weight: bold;
-  cursor: pointer;
   display: flex;
   justify-content: space-between;
   align-items: center;

@@ -2,535 +2,35 @@
 	{
 		"inputs": [
 			{
-				"internalType": "uint256",
-				"name": "tokenId",
-				"type": "uint256"
-			},
-			{
 				"internalType": "address",
-				"name": "sender",
-				"type": "address"
-			}
-		],
-		"name": "addBack",
-		"outputs": [],
-		"stateMutability": "nonpayable",
-		"type": "function"
-	},
-	{
-		"inputs": [
-			{
-				"internalType": "uint256",
-				"name": "odds",
-				"type": "uint256"
-			},
-			{
-				"internalType": "uint256",
-				"name": "reward",
-				"type": "uint256"
-			},
-			{
-				"internalType": "uint256",
-				"name": "xp",
-				"type": "uint256"
-			},
-			{
-				"internalType": "uint256",
-				"name": "hp",
-				"type": "uint256"
-			},
-			{
-				"internalType": "string",
-				"name": "name",
-				"type": "string"
-			},
-			{
-				"internalType": "string",
-				"name": "pic",
-				"type": "string"
-			}
-		],
-		"name": "addTask",
-		"outputs": [],
-		"stateMutability": "nonpayable",
-		"type": "function"
-	},
-	{
-		"inputs": [
-			{
-				"internalType": "address",
-				"name": "user",
+				"name": "vaultAddress",
 				"type": "address"
 			},
 			{
-				"internalType": "uint256",
-				"name": "reward",
-				"type": "uint256"
-			}
-		],
-		"name": "addTokenReward",
-		"outputs": [],
-		"stateMutability": "nonpayable",
-		"type": "function"
-	},
-	{
-		"inputs": [
-			{
-				"internalType": "uint256",
-				"name": "tokenId",
-				"type": "uint256"
-			}
-		],
-		"name": "adRecruit",
-		"outputs": [],
-		"stateMutability": "nonpayable",
-		"type": "function"
-	},
-	{
-		"inputs": [
-			{
-				"internalType": "uint256",
-				"name": "tokenId",
-				"type": "uint256"
-			},
-			{
-				"internalType": "uint256",
-				"name": "ce",
-				"type": "uint256"
-			},
-			{
-				"internalType": "uint256",
-				"name": "armor",
-				"type": "uint256"
-			},
-			{
-				"internalType": "uint256",
-				"name": "luk",
-				"type": "uint256"
-			},
-			{
-				"internalType": "uint256",
-				"name": "unLockTime",
-				"type": "uint256"
-			},
-			{
-				"internalType": "uint256",
-				"name": "nftKindId",
-				"type": "uint256"
-			},
-			{
-				"internalType": "string",
-				"name": "name",
-				"type": "string"
-			},
-			{
-				"internalType": "uint256",
-				"name": "maxNum",
-				"type": "uint256"
-			},
-			{
 				"internalType": "address",
-				"name": "_userAddress",
-				"type": "address"
-			}
-		],
-		"name": "createCard",
-		"outputs": [
-			{
-				"internalType": "uint256",
-				"name": "",
-				"type": "uint256"
-			}
-		],
-		"stateMutability": "nonpayable",
-		"type": "function"
-	},
-	{
-		"inputs": [
-			{
-				"internalType": "address",
-				"name": "rewardAddr",
+				"name": "heroAddress",
 				"type": "address"
 			},
 			{
-				"internalType": "uint256",
-				"name": "reward",
-				"type": "uint256"
-			}
-		],
-		"name": "DisReward",
-		"outputs": [],
-		"stateMutability": "nonpayable",
-		"type": "function"
-	},
-	{
-		"inputs": [
-			{
-				"internalType": "uint256",
-				"name": "tokenId",
-				"type": "uint256"
-			},
-			{
-				"internalType": "uint256",
-				"name": "enemyId",
-				"type": "uint256"
-			}
-		],
-		"name": "DoTask",
-		"outputs": [
-			{
-				"components": [
-					{
-						"internalType": "bool",
-						"name": "suc",
-						"type": "bool"
-					},
-					{
-						"internalType": "uint32",
-						"name": "fgType",
-						"type": "uint32"
-					},
-					{
-						"internalType": "uint256",
-						"name": "reward",
-						"type": "uint256"
-					},
-					{
-						"internalType": "uint256",
-						"name": "hp",
-						"type": "uint256"
-					},
-					{
-						"internalType": "uint256",
-						"name": "xp",
-						"type": "uint256"
-					},
-					{
-						"internalType": "uint256",
-						"name": "unLkTime",
-						"type": "uint256"
-					}
-				],
-				"internalType": "struct Game.FightingEndInfo",
-				"name": "fig",
-				"type": "tuple"
-			}
-		],
-		"stateMutability": "nonpayable",
-		"type": "function"
-	},
-	{
-		"inputs": [
-			{
-				"internalType": "uint256",
-				"name": "index",
-				"type": "uint256"
-			}
-		],
-		"name": "drawReward",
-		"outputs": [
-			{
-				"internalType": "bool",
-				"name": "",
-				"type": "bool"
-			}
-		],
-		"stateMutability": "nonpayable",
-		"type": "function"
-	},
-	{
-		"inputs": [
-			{
-				"internalType": "uint256",
-				"name": "tokenId",
-				"type": "uint256"
-			},
-			{
 				"internalType": "address",
-				"name": "addr",
+				"name": "mrtAddr",
 				"type": "address"
 			}
 		],
-		"name": "editCardDetails",
-		"outputs": [],
-		"stateMutability": "nonpayable",
-		"type": "function"
-	},
-	{
-		"inputs": [],
 		"stateMutability": "nonpayable",
 		"type": "constructor"
 	},
 	{
 		"anonymous": false,
-		"inputs": [
-			{
-				"indexed": true,
-				"internalType": "uint256",
-				"name": "rewardType",
-				"type": "uint256"
-			},
-			{
-				"indexed": true,
-				"internalType": "uint256",
-				"name": "reward",
-				"type": "uint256"
-			},
-			{
-				"indexed": false,
-				"internalType": "uint256",
-				"name": "rate",
-				"type": "uint256"
-			},
-			{
-				"indexed": false,
-				"internalType": "address",
-				"name": "sender",
-				"type": "address"
-			}
-		],
-		"name": "DrawReward",
-		"type": "event"
-	},
-	{
-		"inputs": [
-			{
-				"internalType": "uint256",
-				"name": "_id",
-				"type": "uint256"
-			},
-			{
-				"internalType": "uint256",
-				"name": "_odds",
-				"type": "uint256"
-			},
-			{
-				"internalType": "uint256",
-				"name": "_reward",
-				"type": "uint256"
-			}
-		],
-		"name": "editTask",
-		"outputs": [],
-		"stateMutability": "nonpayable",
-		"type": "function"
-	},
-	{
-		"inputs": [
-			{
-				"internalType": "uint256",
-				"name": "tokenId",
-				"type": "uint256"
-			},
-			{
-				"internalType": "uint256",
-				"name": "enemyId",
-				"type": "uint256"
-			}
-		],
-		"name": "fighting",
-		"outputs": [
-			{
-				"components": [
-					{
-						"internalType": "bool",
-						"name": "suc",
-						"type": "bool"
-					},
-					{
-						"internalType": "uint32",
-						"name": "fgType",
-						"type": "uint32"
-					},
-					{
-						"internalType": "uint256",
-						"name": "reward",
-						"type": "uint256"
-					},
-					{
-						"internalType": "uint256",
-						"name": "hp",
-						"type": "uint256"
-					},
-					{
-						"internalType": "uint256",
-						"name": "xp",
-						"type": "uint256"
-					},
-					{
-						"internalType": "uint256",
-						"name": "unLkTime",
-						"type": "uint256"
-					}
-				],
-				"internalType": "struct Game.FightingEndInfo",
-				"name": "fig",
-				"type": "tuple"
-			}
-		],
-		"stateMutability": "nonpayable",
-		"type": "function"
-	},
-	{
-		"anonymous": false,
-		"inputs": [
-			{
-				"indexed": false,
-				"internalType": "bool",
-				"name": "isSuccess",
-				"type": "bool"
-			},
-			{
-				"indexed": true,
-				"internalType": "uint256",
-				"name": "fightType",
-				"type": "uint256"
-			},
-			{
-				"indexed": true,
-				"internalType": "uint256",
-				"name": "sHp",
-				"type": "uint256"
-			},
-			{
-				"indexed": false,
-				"internalType": "uint256",
-				"name": "addXp",
-				"type": "uint256"
-			},
-			{
-				"indexed": true,
-				"internalType": "uint256",
-				"name": "reward",
-				"type": "uint256"
-			},
-			{
-				"indexed": false,
-				"internalType": "uint256",
-				"name": "tokenId",
-				"type": "uint256"
-			},
-			{
-				"indexed": false,
-				"internalType": "address",
-				"name": "sender",
-				"type": "address"
-			}
-		],
-		"name": "Fighting",
-		"type": "event"
-	},
-	{
-		"inputs": [
-			{
-				"internalType": "bytes32",
-				"name": "role",
-				"type": "bytes32"
-			},
-			{
-				"internalType": "address",
-				"name": "account",
-				"type": "address"
-			}
-		],
-		"name": "grantRole",
-		"outputs": [],
-		"stateMutability": "nonpayable",
-		"type": "function"
-	},
-	{
-		"inputs": [
-			{
-				"internalType": "uint256",
-				"name": "tokenId",
-				"type": "uint256"
-			},
-			{
-				"internalType": "address",
-				"name": "sender",
-				"type": "address"
-			}
-		],
-		"name": "moveBack",
-		"outputs": [],
-		"stateMutability": "nonpayable",
-		"type": "function"
-	},
-	{
-		"anonymous": false,
-		"inputs": [
-			{
-				"indexed": true,
-				"internalType": "uint256",
-				"name": "tokenId",
-				"type": "uint256"
-			},
-			{
-				"indexed": true,
-				"internalType": "address",
-				"name": "sender",
-				"type": "address"
-			},
-			{
-				"indexed": false,
-				"internalType": "uint256",
-				"name": "mvType",
-				"type": "uint256"
-			}
-		],
-		"name": "MoveBack",
+		"inputs": [],
+		"name": "Attack",
 		"type": "event"
 	},
 	{
 		"anonymous": false,
-		"inputs": [
-			{
-				"indexed": true,
-				"internalType": "uint256",
-				"name": "tokenId",
-				"type": "uint256"
-			},
-			{
-				"indexed": true,
-				"internalType": "address",
-				"name": "sender",
-				"type": "address"
-			},
-			{
-				"indexed": false,
-				"internalType": "uint256",
-				"name": "mvType",
-				"type": "uint256"
-			}
-		],
-		"name": "MoveCard",
+		"inputs": [],
+		"name": "Claim",
 		"type": "event"
-	},
-	{
-		"inputs": [
-			{
-				"internalType": "uint256",
-				"name": "tokenId",
-				"type": "uint256"
-			}
-		],
-		"name": "moveToBack",
-		"outputs": [],
-		"stateMutability": "nonpayable",
-		"type": "function"
-	},
-	{
-		"inputs": [
-			{
-				"internalType": "uint256",
-				"name": "tokenId",
-				"type": "uint256"
-			}
-		],
-		"name": "moveToTem",
-		"outputs": [],
-		"stateMutability": "nonpayable",
-		"type": "function"
 	},
 	{
 		"anonymous": false,
@@ -552,556 +52,14 @@
 		"type": "event"
 	},
 	{
-		"inputs": [],
-		"name": "renounceOwnership",
-		"outputs": [],
-		"stateMutability": "nonpayable",
-		"type": "function"
-	},
-	{
-		"inputs": [
-			{
-				"internalType": "bytes32",
-				"name": "role",
-				"type": "bytes32"
-			},
-			{
-				"internalType": "address",
-				"name": "account",
-				"type": "address"
-			}
-		],
-		"name": "renounceRole",
-		"outputs": [],
-		"stateMutability": "nonpayable",
-		"type": "function"
-	},
-	{
-		"inputs": [
-			{
-				"internalType": "bytes32",
-				"name": "role",
-				"type": "bytes32"
-			},
-			{
-				"internalType": "address",
-				"name": "account",
-				"type": "address"
-			}
-		],
-		"name": "revokeRole",
-		"outputs": [],
-		"stateMutability": "nonpayable",
-		"type": "function"
-	},
-	{
 		"anonymous": false,
-		"inputs": [
-			{
-				"indexed": true,
-				"internalType": "bytes32",
-				"name": "role",
-				"type": "bytes32"
-			},
-			{
-				"indexed": true,
-				"internalType": "bytes32",
-				"name": "previousAdminRole",
-				"type": "bytes32"
-			},
-			{
-				"indexed": true,
-				"internalType": "bytes32",
-				"name": "newAdminRole",
-				"type": "bytes32"
-			}
-		],
-		"name": "RoleAdminChanged",
+		"inputs": [],
+		"name": "Reset",
 		"type": "event"
 	},
 	{
-		"anonymous": false,
-		"inputs": [
-			{
-				"indexed": true,
-				"internalType": "bytes32",
-				"name": "role",
-				"type": "bytes32"
-			},
-			{
-				"indexed": true,
-				"internalType": "address",
-				"name": "account",
-				"type": "address"
-			},
-			{
-				"indexed": true,
-				"internalType": "address",
-				"name": "sender",
-				"type": "address"
-			}
-		],
-		"name": "RoleGranted",
-		"type": "event"
-	},
-	{
-		"anonymous": false,
-		"inputs": [
-			{
-				"indexed": true,
-				"internalType": "bytes32",
-				"name": "role",
-				"type": "bytes32"
-			},
-			{
-				"indexed": true,
-				"internalType": "address",
-				"name": "account",
-				"type": "address"
-			},
-			{
-				"indexed": true,
-				"internalType": "address",
-				"name": "sender",
-				"type": "address"
-			}
-		],
-		"name": "RoleRevoked",
-		"type": "event"
-	},
-	{
-		"inputs": [
-			{
-				"internalType": "address",
-				"name": "addr",
-				"type": "address"
-			}
-		],
-		"name": "setErc20",
-		"outputs": [],
-		"stateMutability": "nonpayable",
-		"type": "function"
-	},
-	{
-		"inputs": [
-			{
-				"internalType": "uint32",
-				"name": "enlistTime",
-				"type": "uint32"
-			},
-			{
-				"internalType": "uint32",
-				"name": "temNum",
-				"type": "uint32"
-			},
-			{
-				"internalType": "uint256",
-				"name": "speedMoney",
-				"type": "uint256"
-			},
-			{
-				"internalType": "uint256",
-				"name": "maxLevel",
-				"type": "uint256"
-			},
-			{
-				"internalType": "uint256",
-				"name": "addAttr",
-				"type": "uint256"
-			},
-			{
-				"internalType": "uint256",
-				"name": "upAttrCost",
-				"type": "uint256"
-			},
-			{
-				"internalType": "uint256",
-				"name": "upEqCost",
-				"type": "uint256"
-			}
-		],
-		"name": "setGameInfo",
-		"outputs": [],
-		"stateMutability": "nonpayable",
-		"type": "function"
-	},
-	{
-		"inputs": [
-			{
-				"internalType": "address",
-				"name": "addr",
-				"type": "address"
-			}
-		],
-		"name": "setMonster",
-		"outputs": [],
-		"stateMutability": "nonpayable",
-		"type": "function"
-	},
-	{
-		"inputs": [
-			{
-				"internalType": "uint256",
-				"name": "_rate",
-				"type": "uint256"
-			}
-		],
-		"name": "setReceiveRate",
-		"outputs": [],
-		"stateMutability": "nonpayable",
-		"type": "function"
-	},
-	{
-		"inputs": [
-			{
-				"internalType": "address",
-				"name": "upAddress",
-				"type": "address"
-			}
-		],
-		"name": "setRole",
-		"outputs": [],
-		"stateMutability": "nonpayable",
-		"type": "function"
-	},
-	{
-		"inputs": [
-			{
-				"internalType": "uint256",
-				"name": "_speedMoney",
-				"type": "uint256"
-			}
-		],
-		"name": "setSpeedMoney",
-		"outputs": [],
-		"stateMutability": "nonpayable",
-		"type": "function"
-	},
-	{
-		"inputs": [
-			{
-				"internalType": "uint256",
-				"name": "tokenId",
-				"type": "uint256"
-			},
-			{
-				"internalType": "uint32",
-				"name": "genre",
-				"type": "uint32"
-			}
-		],
-		"name": "setTokenDetailGenre",
-		"outputs": [],
-		"stateMutability": "nonpayable",
-		"type": "function"
-	},
-	{
-		"inputs": [
-			{
-				"internalType": "uint256",
-				"name": "unlockTime",
-				"type": "uint256"
-			}
-		],
-		"name": "setUnlockTime",
-		"outputs": [],
-		"stateMutability": "nonpayable",
-		"type": "function"
-	},
-	{
-		"inputs": [
-			{
-				"internalType": "uint256",
-				"name": "_fee",
-				"type": "uint256"
-			}
-		],
-		"name": "setupMonsterFee",
-		"outputs": [],
-		"stateMutability": "nonpayable",
-		"type": "function"
-	},
-	{
-		"inputs": [
-			{
-				"internalType": "address",
-				"name": "_vault",
-				"type": "address"
-			}
-		],
-		"name": "setVault",
-		"outputs": [],
-		"stateMutability": "nonpayable",
-		"type": "function"
-	},
-	{
-		"anonymous": false,
-		"inputs": [
-			{
-				"indexed": true,
-				"internalType": "uint256",
-				"name": "tokenId",
-				"type": "uint256"
-			},
-			{
-				"indexed": true,
-				"internalType": "address",
-				"name": "sender",
-				"type": "address"
-			},
-			{
-				"indexed": false,
-				"internalType": "uint256",
-				"name": "needFee",
-				"type": "uint256"
-			}
-		],
-		"name": "SpeedTraining",
-		"type": "event"
-	},
-	{
-		"inputs": [
-			{
-				"internalType": "address",
-				"name": "newOwner",
-				"type": "address"
-			}
-		],
-		"name": "transferOwnership",
-		"outputs": [],
-		"stateMutability": "nonpayable",
-		"type": "function"
-	},
-	{
-		"inputs": [
-			{
-				"internalType": "uint256",
-				"name": "_tokenId",
-				"type": "uint256"
-			}
-		],
-		"name": "upLevel",
-		"outputs": [],
-		"stateMutability": "nonpayable",
-		"type": "function"
-	},
-	{
-		"anonymous": false,
-		"inputs": [
-			{
-				"indexed": true,
-				"internalType": "uint256",
-				"name": "tokenId",
-				"type": "uint256"
-			},
-			{
-				"indexed": true,
-				"internalType": "uint256",
-				"name": "level",
-				"type": "uint256"
-			},
-			{
-				"indexed": false,
-				"internalType": "uint256",
-				"name": "amount",
-				"type": "uint256"
-			},
-			{
-				"indexed": false,
-				"internalType": "address",
-				"name": "sender",
-				"type": "address"
-			}
-		],
-		"name": "UpMonster",
-		"type": "event"
-	},
-	{
-		"inputs": [
-			{
-				"internalType": "address",
-				"name": "addr",
-				"type": "address"
-			},
-			{
-				"internalType": "uint256",
-				"name": "amount",
-				"type": "uint256"
-			}
-		],
-		"name": "withdrawal",
-		"outputs": [
-			{
-				"internalType": "bool",
-				"name": "",
-				"type": "bool"
-			}
-		],
-		"stateMutability": "nonpayable",
-		"type": "function"
-	},
-	{
-		"anonymous": false,
-		"inputs": [
-			{
-				"indexed": true,
-				"internalType": "uint256",
-				"name": "amount",
-				"type": "uint256"
-			},
-			{
-				"indexed": true,
-				"internalType": "address",
-				"name": "sender",
-				"type": "address"
-			}
-		],
-		"name": "Withdrawal",
-		"type": "event"
-	},
-	{
-		"inputs": [
-			{
-				"internalType": "address",
-				"name": "addr",
-				"type": "address"
-			},
-			{
-				"internalType": "uint256",
-				"name": "amount",
-				"type": "uint256"
-			}
-		],
-		"name": "withdrawalToken",
-		"outputs": [],
-		"stateMutability": "nonpayable",
-		"type": "function"
-	},
-	{
-		"stateMutability": "payable",
-		"type": "receive"
-	},
-	{
 		"inputs": [],
-		"name": "_gameInfo",
-		"outputs": [
-			{
-				"internalType": "uint32",
-				"name": "enlistTime",
-				"type": "uint32"
-			},
-			{
-				"internalType": "uint32",
-				"name": "temNum",
-				"type": "uint32"
-			},
-			{
-				"internalType": "uint256",
-				"name": "speedMoney",
-				"type": "uint256"
-			},
-			{
-				"internalType": "uint256",
-				"name": "maxLevel",
-				"type": "uint256"
-			},
-			{
-				"internalType": "uint256",
-				"name": "addAttr",
-				"type": "uint256"
-			},
-			{
-				"internalType": "uint256",
-				"name": "upAttrCost",
-				"type": "uint256"
-			},
-			{
-				"internalType": "uint256",
-				"name": "upEqCost",
-				"type": "uint256"
-			}
-		],
-		"stateMutability": "view",
-		"type": "function"
-	},
-	{
-		"inputs": [],
-		"name": "_monster",
-		"outputs": [
-			{
-				"internalType": "contract IMonster",
-				"name": "",
-				"type": "address"
-			}
-		],
-		"stateMutability": "view",
-		"type": "function"
-	},
-	{
-		"inputs": [],
-		"name": "_receiveInfo",
-		"outputs": [
-			{
-				"internalType": "uint256",
-				"name": "lockTime",
-				"type": "uint256"
-			},
-			{
-				"internalType": "uint256",
-				"name": "rate",
-				"type": "uint256"
-			},
-			{
-				"internalType": "uint256",
-				"name": "freeDay",
-				"type": "uint256"
-			}
-		],
-		"stateMutability": "view",
-		"type": "function"
-	},
-	{
-		"inputs": [],
-		"name": "_unlockTime",
-		"outputs": [
-			{
-				"internalType": "uint256",
-				"name": "",
-				"type": "uint256"
-			}
-		],
-		"stateMutability": "view",
-		"type": "function"
-	},
-	{
-		"inputs": [],
-		"name": "bnbPool",
-		"outputs": [
-			{
-				"internalType": "uint256",
-				"name": "",
-				"type": "uint256"
-			}
-		],
-		"stateMutability": "view",
-		"type": "function"
-	},
-	{
-		"inputs": [],
-		"name": "DEFAULT_ADMIN_ROLE",
-		"outputs": [
-			{
-				"internalType": "bytes32",
-				"name": "",
-				"type": "bytes32"
-			}
-		],
-		"stateMutability": "view",
-		"type": "function"
-	},
-	{
-		"inputs": [],
-		"name": "erc20",
+		"name": "MRT",
 		"outputs": [
 			{
 				"internalType": "contract IERC20",
@@ -1113,19 +71,37 @@
 		"type": "function"
 	},
 	{
-		"inputs": [
+		"inputs": [],
+		"name": "Npc",
+		"outputs": [
 			{
-				"internalType": "uint256",
-				"name": "difTime",
-				"type": "uint256"
+				"internalType": "int256",
+				"name": "power",
+				"type": "int256"
+			},
+			{
+				"internalType": "int256",
+				"name": "hp",
+				"type": "int256"
 			}
 		],
-		"name": "getFee",
-		"outputs": [
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [
 			{
 				"internalType": "uint256",
 				"name": "",
 				"type": "uint256"
+			}
+		],
+		"name": "activated",
+		"outputs": [
+			{
+				"internalType": "bool",
+				"name": "",
+				"type": "bool"
 			}
 		],
 		"stateMutability": "view",
@@ -1139,137 +115,33 @@
 				"type": "uint256"
 			}
 		],
-		"name": "getRewardByLevel",
-		"outputs": [
-			{
-				"internalType": "uint256",
-				"name": "",
-				"type": "uint256"
-			}
-		],
-		"stateMutability": "view",
-		"type": "function"
-	},
-	{
-		"inputs": [
-			{
-				"internalType": "bytes32",
-				"name": "role",
-				"type": "bytes32"
-			}
-		],
-		"name": "getRoleAdmin",
-		"outputs": [
-			{
-				"internalType": "bytes32",
-				"name": "",
-				"type": "bytes32"
-			}
-		],
-		"stateMutability": "view",
+		"name": "attack",
+		"outputs": [],
+		"stateMutability": "nonpayable",
 		"type": "function"
 	},
 	{
 		"inputs": [],
-		"name": "getSpecialTask",
-		"outputs": [
-			{
-				"components": [
-					{
-						"internalType": "uint32",
-						"name": "id",
-						"type": "uint32"
-					},
-					{
-						"internalType": "uint256",
-						"name": "odds",
-						"type": "uint256"
-					},
-					{
-						"internalType": "uint256",
-						"name": "basicReward",
-						"type": "uint256"
-					},
-					{
-						"internalType": "uint256",
-						"name": "basicXp",
-						"type": "uint256"
-					},
-					{
-						"internalType": "uint256",
-						"name": "basicHp",
-						"type": "uint256"
-					},
-					{
-						"internalType": "string",
-						"name": "name",
-						"type": "string"
-					},
-					{
-						"internalType": "string",
-						"name": "pic",
-						"type": "string"
-					}
-				],
-				"internalType": "struct Game.enemyInfo[]",
-				"name": "",
-				"type": "tuple[]"
-			}
-		],
-		"stateMutability": "view",
+		"name": "claim",
+		"outputs": [],
+		"stateMutability": "nonpayable",
 		"type": "function"
 	},
 	{
-		"inputs": [
-			{
-				"internalType": "uint256",
-				"name": "enemyId",
-				"type": "uint256"
-			}
-		],
-		"name": "getTaskById",
+		"inputs": [],
+		"name": "constructor1",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [],
+		"name": "deadAddr",
 		"outputs": [
 			{
-				"components": [
-					{
-						"internalType": "uint32",
-						"name": "id",
-						"type": "uint32"
-					},
-					{
-						"internalType": "uint256",
-						"name": "odds",
-						"type": "uint256"
-					},
-					{
-						"internalType": "uint256",
-						"name": "basicReward",
-						"type": "uint256"
-					},
-					{
-						"internalType": "uint256",
-						"name": "basicXp",
-						"type": "uint256"
-					},
-					{
-						"internalType": "uint256",
-						"name": "basicHp",
-						"type": "uint256"
-					},
-					{
-						"internalType": "string",
-						"name": "name",
-						"type": "string"
-					},
-					{
-						"internalType": "string",
-						"name": "pic",
-						"type": "string"
-					}
-				],
-				"internalType": "struct Game.enemyInfo",
+				"internalType": "address",
 				"name": "",
-				"type": "tuple"
+				"type": "address"
 			}
 		],
 		"stateMutability": "view",
@@ -1283,36 +155,29 @@
 				"type": "uint256"
 			}
 		],
-		"name": "getTokenDetail",
+		"name": "freeHero",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "uint8",
+				"name": "times",
+				"type": "uint8"
+			},
+			{
+				"internalType": "uint256",
+				"name": "tokenId",
+				"type": "uint256"
+			}
+		],
+		"name": "getBattleResults",
 		"outputs": [
 			{
 				"internalType": "uint256",
-				"name": "level",
-				"type": "uint256"
-			},
-			{
-				"internalType": "uint256",
-				"name": "ce",
-				"type": "uint256"
-			},
-			{
-				"internalType": "uint256",
-				"name": "xp",
-				"type": "uint256"
-			},
-			{
-				"internalType": "uint256",
-				"name": "armor",
-				"type": "uint256"
-			},
-			{
-				"internalType": "uint256",
-				"name": "luk",
-				"type": "uint256"
-			},
-			{
-				"internalType": "uint256",
-				"name": "rgTime",
+				"name": "",
 				"type": "uint256"
 			}
 		],
@@ -1327,150 +192,7 @@
 				"type": "uint256"
 			}
 		],
-		"name": "getTokenDetails",
-		"outputs": [
-			{
-				"components": [
-					{
-						"internalType": "uint32",
-						"name": "genre",
-						"type": "uint32"
-					},
-					{
-						"internalType": "uint256",
-						"name": "tokenId",
-						"type": "uint256"
-					},
-					{
-						"internalType": "uint256",
-						"name": "hp",
-						"type": "uint256"
-					},
-					{
-						"internalType": "uint256",
-						"name": "level",
-						"type": "uint256"
-					},
-					{
-						"internalType": "uint256",
-						"name": "xp",
-						"type": "uint256"
-					},
-					{
-						"internalType": "uint256",
-						"name": "ce",
-						"type": "uint256"
-					},
-					{
-						"internalType": "uint256",
-						"name": "armor",
-						"type": "uint256"
-					},
-					{
-						"internalType": "uint256",
-						"name": "luk",
-						"type": "uint256"
-					},
-					{
-						"internalType": "uint256",
-						"name": "unLockTime",
-						"type": "uint256"
-					},
-					{
-						"internalType": "uint256",
-						"name": "rgTime",
-						"type": "uint256"
-					},
-					{
-						"internalType": "uint256",
-						"name": "nftKindId",
-						"type": "uint256"
-					},
-					{
-						"internalType": "string",
-						"name": "name",
-						"type": "string"
-					}
-				],
-				"internalType": "struct Game.CardDetails",
-				"name": "",
-				"type": "tuple"
-			}
-		],
-		"stateMutability": "view",
-		"type": "function"
-	},
-	{
-		"inputs": [
-			{
-				"internalType": "uint256",
-				"name": "tokenId",
-				"type": "uint256"
-			}
-		],
-		"name": "getUserAddress",
-		"outputs": [
-			{
-				"internalType": "address",
-				"name": "",
-				"type": "address"
-			}
-		],
-		"stateMutability": "view",
-		"type": "function"
-	},
-	{
-		"inputs": [
-			{
-				"internalType": "address",
-				"name": "sender",
-				"type": "address"
-			}
-		],
-		"name": "getUserBkCards",
-		"outputs": [
-			{
-				"internalType": "uint256[]",
-				"name": "",
-				"type": "uint256[]"
-			}
-		],
-		"stateMutability": "view",
-		"type": "function"
-	},
-	{
-		"inputs": [
-			{
-				"internalType": "address",
-				"name": "sender",
-				"type": "address"
-			}
-		],
-		"name": "getUserTeamCards",
-		"outputs": [
-			{
-				"internalType": "uint256[]",
-				"name": "",
-				"type": "uint256[]"
-			}
-		],
-		"stateMutability": "view",
-		"type": "function"
-	},
-	{
-		"inputs": [
-			{
-				"internalType": "bytes32",
-				"name": "role",
-				"type": "bytes32"
-			},
-			{
-				"internalType": "address",
-				"name": "account",
-				"type": "address"
-			}
-		],
-		"name": "hasRole",
+		"name": "getFreedInfo",
 		"outputs": [
 			{
 				"internalType": "bool",
@@ -1487,19 +209,95 @@
 				"internalType": "uint256",
 				"name": "tokenId",
 				"type": "uint256"
+			}
+		],
+		"name": "getHelaFee",
+		"outputs": [
+			{
+				"internalType": "uint256",
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "uint256",
+				"name": "tokenId",
+				"type": "uint256"
+			}
+		],
+		"name": "getHeroInfo",
+		"outputs": [
+			{
+				"internalType": "int256",
+				"name": "hp",
+				"type": "int256"
 			},
 			{
+				"internalType": "int256",
+				"name": "power",
+				"type": "int256"
+			},
+			{
+				"internalType": "uint256",
+				"name": "foughtTimes",
+				"type": "uint256"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "uint256",
+				"name": "tokenId",
+				"type": "uint256"
+			}
+		],
+		"name": "healHero",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [],
+		"name": "heroAddr",
+		"outputs": [
+			{
 				"internalType": "address",
-				"name": "sender",
+				"name": "",
 				"type": "address"
 			}
 		],
-		"name": "isBack",
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "uint256",
+				"name": "tokenId",
+				"type": "uint256"
+			}
+		],
+		"name": "initBattleTeam",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [],
+		"name": "invadeTimes",
 		"outputs": [
 			{
-				"internalType": "bool",
+				"internalType": "uint8",
 				"name": "",
-				"type": "bool"
+				"type": "uint8"
 			}
 		],
 		"stateMutability": "view",
@@ -1519,65 +317,21 @@
 		"type": "function"
 	},
 	{
-		"inputs": [
-			{
-				"internalType": "uint256",
-				"name": "_length",
-				"type": "uint256"
-			}
-		],
-		"name": "rand",
-		"outputs": [
-			{
-				"internalType": "uint256",
-				"name": "",
-				"type": "uint256"
-			}
-		],
-		"stateMutability": "view",
-		"type": "function"
-	},
-	{
-		"inputs": [
-			{
-				"internalType": "uint256",
-				"name": "remainTime",
-				"type": "uint256"
-			}
-		],
-		"name": "speedFee",
-		"outputs": [
-			{
-				"internalType": "uint256",
-				"name": "",
-				"type": "uint256"
-			}
-		],
-		"stateMutability": "view",
-		"type": "function"
-	},
-	{
-		"inputs": [
-			{
-				"internalType": "bytes4",
-				"name": "interfaceId",
-				"type": "bytes4"
-			}
-		],
-		"name": "supportsInterface",
-		"outputs": [
-			{
-				"internalType": "bool",
-				"name": "",
-				"type": "bool"
-			}
-		],
-		"stateMutability": "view",
-		"type": "function"
-	},
-	{
 		"inputs": [],
-		"name": "upMonsterFee",
+		"name": "renounceOwnership",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "address",
+				"name": "",
+				"type": "address"
+			}
+		],
+		"name": "rewards",
 		"outputs": [
 			{
 				"internalType": "uint256",
@@ -1592,73 +346,18 @@
 		"inputs": [
 			{
 				"internalType": "address",
-				"name": "",
+				"name": "newOwner",
 				"type": "address"
 			}
 		],
-		"name": "userBnbPool",
-		"outputs": [
-			{
-				"internalType": "uint256",
-				"name": "reward",
-				"type": "uint256"
-			},
-			{
-				"internalType": "uint256",
-				"name": "validTime",
-				"type": "uint256"
-			},
-			{
-				"internalType": "uint256",
-				"name": "unLockTime",
-				"type": "uint256"
-			},
-			{
-				"internalType": "bool",
-				"name": "isVaild",
-				"type": "bool"
-			}
-		],
-		"stateMutability": "view",
-		"type": "function"
-	},
-	{
-		"inputs": [
-			{
-				"internalType": "address",
-				"name": "",
-				"type": "address"
-			}
-		],
-		"name": "userTokenPool",
-		"outputs": [
-			{
-				"internalType": "uint256",
-				"name": "reward",
-				"type": "uint256"
-			},
-			{
-				"internalType": "uint256",
-				"name": "validTime",
-				"type": "uint256"
-			},
-			{
-				"internalType": "uint256",
-				"name": "unLockTime",
-				"type": "uint256"
-			},
-			{
-				"internalType": "bool",
-				"name": "isVaild",
-				"type": "bool"
-			}
-		],
-		"stateMutability": "view",
+		"name": "transferOwnership",
+		"outputs": [],
+		"stateMutability": "nonpayable",
 		"type": "function"
 	},
 	{
 		"inputs": [],
-		"name": "vault",
+		"name": "vaultAddr",
 		"outputs": [
 			{
 				"internalType": "address",

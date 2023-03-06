@@ -10,7 +10,7 @@ button {
     letter-spacing: 0.2em;
     position: relative;
     z-index: 1;
-    cursor: pointer;
+    cursor: url(../assets/hand-cursor.png), pointer;
     background: none;
     margin-top: 20px;
     width: 250px;
