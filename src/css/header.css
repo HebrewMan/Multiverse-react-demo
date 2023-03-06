@@ -1,0 +1,31 @@
+.nav-item span{ 
+    margin-right: 40px;
+    color: cornflowerblue;
+    font-weight: bold;
+    cursor: pointer;
+    opacity: 0.8;
+  }
+
+  .nav-item span:hover{
+    opacity: 1;
+  }
+  
+  .nav-item2 span{ 
+    text-shadow:  0 0 5px white,0 0 10px #00FFFF,0 0 15px #7FFF00,0 0 20px white;
+    margin-left: 20px;
+  }
+
+
+  .account{
+    width: 85%;
+    font-size: 25px;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    margin: 0 auto;
+    box-sizing: border-box;
+  }
+ 
+  .cur{
+    text-shadow:  0 0 5px white,0 0 10px #00FFFF,0 0 15px #7FFF00,0 0 20px white;
+  }
