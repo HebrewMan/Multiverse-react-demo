@@ -5,26 +5,40 @@ import "./heroItem.scss"
 
 
 export let childHandleClick: () => void
-const HeroItem = (props:any) => {
-    console.log('props', props)
-
+const HeroItem = (props: any) => {
     const [position, setPosition] = useState(0);
+    const [heroStatus, setHeroStatus] = useState('zhan');
 
-    
+    const [shaking, setShaking] = useState(false);
 
-    const handleClick = () => {
-      setPosition(position + 300);
-      setTimeout(() => {
-        setPosition(position);
-      }, 5000);
-      props?.onButtonClick();
+    const handleShake = () => {
+        setShaking(true);
+        setTimeout(() => setShaking(false), 500);
+    };
+
+    const handleAttack = async() => {
+        setHeroStatus("run");
+        setPosition(position + 300);
+
+        setTimeout(() => {
+            setHeroStatus("gongji");
+        }, 2000);
+        setTimeout(() => {
+            setHeroStatus("zhan");
+        }, 3500);
+        setTimeout(() => {
+            setShaking(true);
+        }, 4000);
+        setTimeout(() => {
+            setPosition(position);//回去
+        }, 5000);
     }
 
-    const run = ()=>{
+    const run = () => {
         console.log('run')
     }
 
-    childHandleClick = handleClick
+    childHandleClick = handleAttack
 
     /*
         发动进攻
@@ -38,14 +52,14 @@ const HeroItem = (props:any) => {
         用户回来
         检验 血量
     */
- 
-    
+
+
     return (
         <React.Fragment >
-            <div className="item" ref={(_ref) => props.ref} style={{ transform: `translateX(${position}px)`, transition: 'transform 2s ease' }}>
-                <HealthBar hp={200} className="hp"/>
-                <img src={require(`../../assets/jianxiake/zhan.gif`)} alt="" width={300} style={{marginBottom:'20px'}} />
-                <p className='name' onClick={handleClick}>剑 侠 客</p>
+            <div className="item"  ref={(_ref) => props.ref} style={{ transform: `translateX(${position}px)`, transition: 'transform 2s ease' }}>
+                <HealthBar hp={200} className="hp" />
+                <img className={` ${shaking ? 'shake' : ''}`} src={require(`../../assets/yangjian/${heroStatus}.gif`)} alt="" width={300} style={{ marginBottom: '20px' }} />
+                <p className='name'>剑 侠 客</p>
             </div>
         </React.Fragment>
     )
