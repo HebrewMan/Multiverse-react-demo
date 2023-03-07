@@ -1,3 +1,75 @@
+.neonText {
+    color: #fff;
+    text-shadow:
+      0 0 7px #fff,
+      0 0 10px #fff,
+      0 0 21px #fff,
+      0 0 42px #bc13fe,
+      0 0 82px #bc13fe,
+      0 0 92px #bc13fe,
+      0 0 102px #bc13fe,
+      0 0 151px #bc13fe;
+  }
+    
+
+   
+  h1, h2 {
+    text-align: center;
+    font-weight: 400;
+  }
+    
+  h1 {
+    font-size: 3.2rem;
+    width: 30%;
+    margin: 0 auto;
+    margin-top: 50px;
+    animation: pulsate 1.5s infinite alternate;  
+    border: 0.2rem solid #fff;
+    border-radius: 2rem;
+    padding: 0.4em;
+    box-shadow: 0 0 .2rem #fff,
+              0 0 .2rem #fff,
+              0 0 2rem #bc13fe,
+              0 0 0.8rem #bc13fe,
+              0 0 2.8rem #bc13fe,
+              inset 0 0 1.3rem #bc13fe; 
+  }
+   
+  @keyframes pulsate {
+      
+    100% {
+   
+        text-shadow:
+        0 0 4px #fff,
+        0 0 11px #fff,
+        0 0 19px #fff,
+        0 0 40px #bc13fe,
+        0 0 80px #bc13fe,
+        0 0 90px #bc13fe,
+        0 0 100px #bc13fe,
+        0 0 150px #bc13fe;
+    
+    }
+    
+    0% {
+   
+      text-shadow:
+      0 0 2px #fff,
+      0 0 4px #fff,
+      0 0 6px #fff,
+      0 0 10px #bc13fe,
+      0 0 45px #bc13fe,
+      0 0 55px #bc13fe,
+      0 0 70px #bc13fe,
+      0 0 80px #bc13fe;
+   
+  }
+}
+  
+
+
+
+
 @keyframes opacityChange {
     50% {
         opacity:.5;
@@ -12,9 +84,11 @@
 	}
 }
 
+
+
 .heros {
     width: 95%;
-    margin: 100px auto;
+    margin: 60px auto;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -24,12 +98,16 @@
     font-size: 15px;
     color: white;
     
-    text-align: center;
-    text-shadow: 0 0 5px white, 0 0 10px #00FFFF, 0 0 15px #7FFF00, 0 0 20px white;
+    text-align: left;
+    text-shadow: 0 0 7px #fff, 0 0 10px #fff, 0 0 21px #fff, 0 0 42px #bc13fe, 0 0 82px #bc13fe, 0 0 92px #bc13fe, 0 0 102px #bc13fe, 0 0 151px #bc13fe;
     background-color: #000;
     &:hover{
         opacity: 1;
         font-weight: bold;
+    }
+    .name{
+    text-align: center;
+
     }
 
     div{ 
@@ -42,6 +120,7 @@
         z-index: 0;
         overflow: hidden;
         padding: 2rem;
+        box-shadow: 0 0 0.2rem #fff, 0 0 0.2rem #fff, 0 0 2rem #bc13fe, 0 0 0.8rem #bc13fe, 0 0 2.8rem #bc13fe, inset 0 0 1.3rem #bc13fe;
         z-index: 0;
         border-radius: --bRadius;
         &::after, &::before {
@@ -75,13 +154,9 @@
         
             // animation: opacityChange 5s infinite linear;
         }
-
-      
         
     }
 }
-
-
 
 .hero:nth-child(9) div::after {
     animation: opacityChange 5s infinite linear;
@@ -99,4 +174,8 @@
     
 }
 
+.master{
+    width:54%;
+    margin: 0 auto;
+}
 

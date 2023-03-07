@@ -1,8 +1,14 @@
+import React, { ReactElement, useState, useEffect, useRef } from 'react';
+import { ethers, Signer } from 'ethers';
+
+interface Props { }
 const Vault = ()=>{
     return (
-        <div>
-            Vault 组件
-        </div>
+        <React.Fragment>
+        <h1 className="neonText">
+                Vault
+        </h1>
+    </React.Fragment>
     )
 }
 

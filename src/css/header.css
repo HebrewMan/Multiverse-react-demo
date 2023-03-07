@@ -1,16 +1,18 @@
 .nav-item span{ 
     margin-right: 40px;
-    color: cornflowerblue;
     font-weight: bold;
     opacity: 0.7;
+    color: cornflowerblue;
+    text-decoration:none;
   }
+
 
   .nav-item span:hover{
     opacity: 1;
   }
   
   .nav-item2 span{ 
-    text-shadow:  0 0 5px white,0 0 10px #00FFFF,0 0 15px #7FFF00,0 0 20px white;
+    text-shadow: 0 0 7px #fff, 0 0 10px #fff, 0 0 21px #fff, 0 0 42px #bc13fe, 0 0 82px #bc13fe, 0 0 92px #bc13fe, 0 0 102px #bc13fe, 0 0 151px #bc13fe;
     margin-left: 20px;
   }
 
@@ -27,5 +29,5 @@
  
   .cur{
     opacity: 1 !important;
-    text-shadow:  0 0 5px white,0 0 10px #00FFFF,0 0 15px #7FFF00,0 0 20px white;
+    text-shadow: 0 0 7px #fff, 0 0 10px #fff, 0 0 21px #fff, 0 0 42px #bc13fe, 0 0 82px #bc13fe, 0 0 92px #bc13fe, 0 0 102px #bc13fe, 0 0 151px #bc13fe;
   }

@@ -1,9 +1,11 @@
 .health-bar {
-    width: 300px;
-    height: 30px;
+    height: 10px;
     background-color: #ccc;
     border-radius: 5px;
-    padding: 5px;
+    padding: 3px;
+    position: absolute;
+    top: 30px;
+    left: 50px;
     box-sizing: border-box;
   }
   
@@ -12,4 +14,28 @@
     background-color: #f00;
     border-radius: 5px;
     transition: width 0.3s ease-in-out;
+  }
+
+  .health-bar2 {
+    height: 10px;
+    background-color: #ccc;
+    border-radius: 5px;
+    padding: 3px;
+    position: absolute;
+    top: 55px;
+    left: 50px;
+    box-sizing: border-box;
+  }
+  
+  .health-bar-progress2 {
+    height: 100%;
+    background-color: #fef900;
+    border-radius: 5px;
+    transition: width 0.3s ease-in-out;
+  }
+
+  .font{
+    color: white;
+    font-size: 14px;
+    text-shadow: 0 0 7px #fff, 0 0 10px #fff, 0 0 21px #fff, 0 0 42px #bc13fe, 0 0 82px #bc13fe, 0 0 92px #bc13fe, 0 0 102px #bc13fe, 0 0 151px #bc13fe;
   }

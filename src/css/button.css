@@ -1,9 +1,8 @@
 
 button {
     border: none;
-    padding: 1em;
-    outline: none;
     color: white;
+    border-radius: 10px;
     text-transform: uppercase;
     font-weight: 900;
     font-style: 1.2em;
@@ -13,36 +12,16 @@ button {
     cursor: url(../assets/hand-cursor.png), pointer;
     background: none;
     margin-top: 20px;
+    width: 247px;
+    height: 50px;
+    font-size: 12px;
+    text-shadow: 0 0 7px #fff, 0 0 10px #fff, 0 0 21px #fff, 0 0 42px #bc13fe, 0 0 82px #bc13fe, 0 0 92px #bc13fe, 0 0 102px #bc13fe, 0 0 151px #bc13fe;
+    box-shadow: 0 0 0.2rem #fff, 0 0 0.2rem #fff, 0 0 2rem #bc13fe, 0 0 0.8rem #bc13fe, 0 0 2.8rem #bc13fe, inset 0 0 1.3rem #bc13fe;
+  }
+  button:hover {
+    /* width: 115%; */
+    font-size: 13px;
     width: 250px;
+    /* height: 115%; */
   }
-  button:hover:before {
-    width: 115%;
-    height: 115%;
-  }
-  button:before {
-    -webkit-filter: blur(7px);
-    filter: blur(7px);
-    transition: all .25s ease;
-    -webkit-animation: pulse 10s infinite ease;
-    animation: pulse 10s infinite ease;
-  }
-  
-  button:after {
-    -webkit-filter: blur(0.3px);
-    filter: blur(0.3px);
-  }
-  
-  button:before, button:after {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    border-radius: 10em;
-    -webkit-transform: translateX(-50%) translateY(-50%);
-    transform: translateX(-50%) translateY(-50%);
-    width: 105%;
-    height: 105%;
-    content: '';
-    z-index: -2;
-    background-size: 400% 400%;
-    background: linear-gradient(60deg, #f79533, #f37055, #ef4e7b, #a166ab, #5073b8, #1098ad, #07b39b, #6fba82);
-  }
+ 
