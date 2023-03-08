@@ -1,4 +1,4 @@
-import React, { ReactElement, useState, useEffect, useRef } from 'react';
+import React, { ReactElement, useState, useImperativeHandle, useRef } from 'react';
 import { ethers, Signer } from 'ethers';
 import HealthBar from "../../components/HealthBar";
 import "./index.scss"
@@ -6,14 +6,15 @@ import HeroItem from '../../components/heroItem/heroItem';
 import { childHandleClick } from '../../components/heroItem/heroItem'
 interface Props { }
 const Arena = () => {
-    const childRef = useRef();
-  
+    const childRef = useRef<any>();
+    // useImperativeHandle
     const aaa = ()=>{
         console.log(908098908)
     }
 
     const attack = () => {
-        childHandleClick && childHandleClick()
+        // childHandleClick && childHandleClick()
+        childRef.current?.handleClick();
     }
 
     return (

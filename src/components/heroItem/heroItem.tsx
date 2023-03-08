@@ -1,8 +1,11 @@
-import React, { ReactElement, useState, useEffect } from 'react';
+import React, { ReactElement, useState, useRef } from 'react';
 import { ethers, Signer } from 'ethers';
 import HealthBar from "../HealthBar";
 import "./heroItem.scss"
 
+type childMethods = {
+    handleClick:()=>void
+}
 
 export let childHandleClick: () => void
 const HeroItem = (props:any) => {
@@ -10,6 +13,7 @@ const HeroItem = (props:any) => {
 
     const [position, setPosition] = useState(0);
 
+    const childRef = useRef<any>(null);
     
 
     const handleClick = () => {
@@ -20,6 +24,8 @@ const HeroItem = (props:any) => {
       props?.onButtonClick();
     }
 
+
+    childRef.current = {handleClick}
     const run = ()=>{
         console.log('run')
     }
