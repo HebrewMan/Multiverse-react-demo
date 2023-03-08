@@ -13,6 +13,8 @@ const Header: any = (props: any) => {
         nav('/'+item)
     }
 
+    //背景音乐切换 3种场景
+
     const [signer, setSigner] = useState<any>();
     const [account, setAccount] = useState('');
     const [balance, setBalance] = useState('');

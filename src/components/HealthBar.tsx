@@ -2,23 +2,22 @@ import React, { useState ,useEffect} from 'react';
 import "../css/healthBar.css";
 
 function HealthBar(props:any) {
-  const [health, setHealth] = useState(150);
 
 
-  const handleAttack = () => {
-    setHealth(health - 50);
-  };
 
   return (
     <div>
+    
+     <span className="hp"> HP 🛡 {props.hp<=0?0:props.hp} </span>
+     <span className="pa"> PA ⚔ {props.pa} </span>
+      <div className="health-bar" style={{ width: `${props.initHp+7}px` }}>
+        <div className="health-bar-progress font" style={{ width: `${props.hp}px` }}></div>
+      </div>
      
-      <div className="health-bar" style={{ width: `${health+8}px` }}>
-        <div className="health-bar-progress font" style={{ width: `${health}px` }}>Hp 🛡</div>
+      <div className="health-bar2" style={{ width: `${props.pa+7}px` }}>
+       <div className="health-bar-progress2 font" style={{ width: `${props.pa}px` }}></div>
       </div>
-
-      <div className="health-bar2" style={{ width: `${health+8}px` }}>
-       <div className="health-bar-progress2 font" style={{ width: `${health}px` }}>PA ⚔</div>
-      </div>
+    
     </div>
   );
 }

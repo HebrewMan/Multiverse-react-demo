@@ -20,13 +20,13 @@ function Master(props: any){
         <div className="master" style={{marginTop: '60px'}}>
             <div  className= 'hero-cur hero master'>
                 <div style={{height: '490px'}}>
-                    <p className='pa' style={{ color: '#fef900' }}>⚔ : {1}</p>
-                    <p className='hp' style={{ color: '#ff4c4c' }}>🛡 : 10000000000000000000</p>
-                    <p className='hp' style={{ color: '#ff4c4c' }}>💰 : ❌❌❌</p>
+                    <p className='pa' style={{ color: '#fef900' }}>攻击力 ⚔ : {1}</p>
+                    <p className='hp' style={{ color: '#ff4c4c' }}>防御力 🛡 : 100000000000000000</p>
+                    <p className='hp' style={{ color: '#ff4c4c' }}>零售价 💰 : ❌❌❌</p>
 
                     {/* <HealthBar hp={200} /> */}
                     <img src={require(`../../assets/master/master.gif`)} alt="" width={300} style={{marginTop: '80px',marginBottom:'20px'}} />
-                    <p className='name'>马 保 国</p>
+                    {/* <p className='name'>马 保 国</p> */}
                 </div>
             </div>
         </div>

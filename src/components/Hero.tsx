@@ -22,7 +22,6 @@ function Hero(props: any){
                 <img src={props.heroData.src} alt="" width={300} height={300} />
                 <p className='name'>No.{props.heroData.tokenId} {props.heroData.name}</p>
             </div>
-
         </div>
     )
 }

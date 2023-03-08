@@ -1,6 +1,6 @@
 import React, { ReactElement, useState, useEffect,} from 'react';
 import { ethers, Signer } from 'ethers';
-import HealthBar from "../HealthBar";
+import HealthBar from "../../../components/HealthBar";
 import "./heroItem.scss"
 
 const HeroItem = (props:any) => {

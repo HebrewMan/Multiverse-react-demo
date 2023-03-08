@@ -12,3 +12,59 @@
     text-shadow: 0 0 7px #fff, 0 0 10px #fff, 0 0 21px #fff, 0 0 42px #bc13fe, 0 0 82px #bc13fe, 0 0 92px #bc13fe, 0 0 102px #bc13fe, 0 0 151px #bc13fe;
     font-weight: bold;
 }
+
+@keyframes shake {
+  0% {
+    transform: translate(0);
+  }
+  25% {
+    transform: translate(-5px, 5px);
+  }
+  50% {
+    transform: translate(0);
+  }
+  75% {
+    transform: translate(5px, -5px);
+  }
+  100% {
+    transform: translate(0);
+  }
+}
+
+
+.shake {
+  animation: shake 0.5s;
+}
+
+.btns {
+  width: 520px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  cursor: pointer;
+  margin: 0 auto;
+}
+.skill{
+  position: absolute;
+  top: 120px;
+  left: 90px;
+}
+
+
+.item{
+  margin:  0 auto;
+  margin-top: 30px;
+  box-sizing: border-box;
+
+  .left{
+    position: relative;
+  }
+ 
+  color: white;
+  text-shadow: 0 0 7px #fff, 0 0 10px #fff, 0 0 21px #fff, 0 0 42px #bc13fe, 0 0 82px #bc13fe, 0 0 92px #bc13fe, 0 0 102px #bc13fe, 0 0 151px #bc13fe;
+  font-weight: bold;
+  .name{
+      left: 100px;
+      position: absolute;
+  }
+}
