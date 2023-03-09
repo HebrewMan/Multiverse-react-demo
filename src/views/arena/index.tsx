@@ -1,7 +1,6 @@
 import React, { ReactElement, useState, useImperativeHandle, useRef } from 'react';
 import { ethers, Signer } from 'ethers';
 import HealthBar from "../../components/HealthBar";
-import ctx  from '../../components/store/'
 import "./index.scss"
 
 import healMp3 from '../../assets/mp3/heal.mp3';

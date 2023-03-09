@@ -7,7 +7,7 @@ import { Route, Routes, } from 'react-router-dom';
 const Routers: any = () =>
 (
     <Routes replace >
-        <Route replace path="/" exact={true} element={<Master />} ></Route>
+        <Route replace path="/index" exact={true} element={<Master />} ></Route>
         <Route replace path="/mint" exact={true} element={<Mint />}> </Route>
         <Route replace path='/arena/:id' exact={true} element={<Arena />}></Route>
         <Route replace path='/vault' exact={true} element={<Vault />}></Route>
