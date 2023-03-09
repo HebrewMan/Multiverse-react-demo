@@ -1,24 +1,40 @@
-import { Link, BrowserRouter, useNavigate, Outlet } from 'react-router-dom';
-import React, { useState } from 'react';
+import {  useNavigate, } from 'react-router-dom';
+import { useState,useEffect,useRef} from 'react';
 import { ethers, Signer } from 'ethers';
 import { Game as _Game } from '../contracts';
 import '../css/header.css';
 import "../css/button.css"
+import bgMusic from '../assets/mp3/Main-Titles.mp3';
 const Header: any = (props: any) => {
 
-    const [path, setPath] = useState<any>('mint')
+    const [isPlaying, setIsPlaying] = useState(false);
+    const audioRef = useRef<HTMLAudioElement>(null);
+
+    const [path, setPath] = useState<any>('')
     const nav = useNavigate()
-    const changePath = (item: string) => {
-        setPath(item)
-        nav('/'+item)
+
+    const handlePlay = () => {
+        setIsPlaying(!isPlaying);
+        isPlaying?audioRef.current?.pause():audioRef.current?.play();
+        console.log(audioRef.current)
+    } 
+
+    const changePath = (item: string,tokenId?:number) => {
+        //背景音乐切换 3种场景
+        if(item != 'arena'){
+            setPath(item);
+            nav('/'+item);
+        }
     }
 
-    //背景音乐切换 3种场景
+    useEffect(()=>{
+        if(window.location.href.indexOf('arena')!=-1)setPath('arena');
+    })
+
 
     const [signer, setSigner] = useState<any>();
     const [account, setAccount] = useState('');
     const [balance, setBalance] = useState('');
-
 
     function conncetWallet() {
 
@@ -49,21 +65,25 @@ const Header: any = (props: any) => {
 
     return (
         <div className='account' style={{ marginTop: 20 + 'px' }}>
+            <audio ref={audioRef} src={bgMusic} loop={true}/>
             <p className="nav-item">
+
+                <span onClick={e => changePath('')} className={path === '' ? 'cur' : ''}>🥽</span>
         
                 <span onClick={e => changePath('mint')} className={path === 'mint' ? 'cur' : ''}>
-                    Mint
+                    Mint 💎
                 </span>
                 <span onClick={e => changePath('arena')} className={path === 'arena' ? 'cur' : ''} >
-                    Arena
+                    Arena🤺
                 </span>
                 <span onClick={e => changePath('vault')} className={path === 'vault' ? 'cur' : ''}>
-                    Vault
+                    Vault 💸
                 </span>
             </p>
             <p className="nav-item2">
                 <span>👨‍⚖️ {account}</span>
                 <span>💰 {Number(balance).toFixed(4)}</span>
+                <span onClick={handlePlay}>{isPlaying?'⏸':'⏯'}</span>
             </p>
         </div>
     )

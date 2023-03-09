@@ -6,6 +6,7 @@ import { BrowserRouter} from 'react-router-dom';
 import Routers from './router';
 import Tips from './components/Tips';
 import Header from './components/Header';
+import { Watermark } from 'antd';
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
 );
@@ -13,8 +14,10 @@ root.render(
   <React.StrictMode>
     <BrowserRouter>
       <Header />
-      <Routers />
-      <Tips />
+      <Watermark content="HebrewMan">
+        <Routers />
+        <Tips />
+      </Watermark>
     </BrowserRouter>
    
   </React.StrictMode>

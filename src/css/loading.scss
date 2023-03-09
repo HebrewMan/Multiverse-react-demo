@@ -1,0 +1,61 @@
+.overlay {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-color: rgba(0,0,0,.7);
+    z-index: 100;
+    .box{
+        position: relative;
+        width: 300px;
+        margin: 0 auto;
+        margin-top: 250px;
+        z-index: 200;
+        text-align: center;
+        .progess{
+            .ant-progress-inner{
+                box-shadow:  0 0 5px white,0 0 10px #00FFFF,0 0 15px #7FFF00,0 0 20px white;
+            }
+            position:absolute;
+            // top: 50px;
+            width: 100%;
+            p{
+                margin-bottom: 10px;
+            }
+        }
+       
+        .progess,.ant-progress-text{
+            text-transform: uppercase;
+            font-weight: 900;
+            letter-spacing: 0.2em;
+            color: white;
+            text-shadow:  0 0 5px white,0 0 10px #00FFFF,0 0 15px #7FFF00,0 0 20px white;
+        }
+        
+    }
+  }
+
+
+  @keyframes shake {
+    0% {
+      transform: translate(0);
+    }
+    25% {
+      transform: translate(-5px, 5px);
+    }
+    50% {
+      transform: translate(0);
+    }
+    75% {
+      transform: translate(5px, -5px);
+    }
+    100% {
+      transform: translate(0);
+    }
+  }
+  
+  
+  .shake {
+    animation: shake 0.5s;
+  }

@@ -8,6 +8,7 @@ body {
   background: #000000;
   min-width: 750px;
   cursor: url(./assets/hand-cursor.png), pointer;
+  min-width: 1220px;
 }
 
 

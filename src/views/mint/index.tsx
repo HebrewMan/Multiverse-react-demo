@@ -1,8 +1,10 @@
-import React, { ReactElement, useState, useEffect, useRef } from 'react';
+import React, { ReactElement, useState, useRef } from 'react';
+import { useNavigate } from 'react-router-dom';
+
 import { ethers, Signer } from 'ethers';
 import "../../css/button.css"
-import Hero from "../../components/Hero";
-import bgMusic from '../../assets/mp3/bk.mp3';
+import Hero from "./hero";
+import Loading from '../../components/loading';
 interface Props { }
 
 interface HeroType {
@@ -15,8 +17,7 @@ interface HeroType {
 
 const Init: React.FC<Props> = (props) => {
 
-    const [isPlaying, setIsPlaying] = useState(false);
-    const audioRef = useRef<HTMLAudioElement>(null);
+    const nav = useNavigate()
 
     const [currentId, setCurrentId] = useState(2);
 
@@ -26,27 +27,25 @@ const Init: React.FC<Props> = (props) => {
         { tokenId: 3, name: "神 天 兵", pa: 150, hp: 300, src: require(`../../assets/shentianbing/zhan2.gif`) },
     ]
 
-    const changeId = (id: number) => {
-        setCurrentId(id);
-        audioRef.current?.play();
-        setIsPlaying(true);
-    } // 设置播放状态
+    const changeId = (id: number) => setCurrentId(id);
+    
 
 
     const heroHtmls: ReactElement[] = herosDatas.map((item: HeroType, index: number) => (
-        <Hero className='hero' key={index} change={changeId} heroData={item} currentId={currentId} />
+        <Hero  key={index} change={changeId} heroData={item} currentId={currentId} />
     ));
 
 
     const mint = () => {
-        //mint 之后 直接初始化。然后跳转战斗页面
+        //mint 之后 直接初始化。然后跳转战斗页面 
+        //判断当前id 是否被mint。如果被Mint 修改按钮文字 直接去战斗 else mint 
+        nav(`/arena/${currentId}`)
     }
 
     return (
         <React.Fragment>
-            <audio ref={audioRef} src={bgMusic} />
             <h1 className="neonText">
-                点 将 大 会
+            💂‍♂️ 点 将 大 会 
             </h1>
             <div className='heros'>
                 {heroHtmls}
