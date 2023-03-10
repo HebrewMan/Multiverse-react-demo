@@ -2,6 +2,7 @@ import React, { ReactElement, useState, useRef } from 'react';
 import { useNavigate } from 'react-router-dom';
 
 import { ethers, Signer } from 'ethers';
+import { ERC721 ,Game} from '../../contracts'
 import "../../css/button.css"
 import Hero from "./hero";
 import Loading from '../../components/loading';
@@ -30,16 +31,31 @@ const Init: React.FC<Props> = (props) => {
     const changeId = (id: number) => setCurrentId(id);
     
 
-
     const heroHtmls: ReactElement[] = herosDatas.map((item: HeroType, index: number) => (
         <Hero  key={index} change={changeId} heroData={item} currentId={currentId} />
     ));
 
 
-    const mint = () => {
+    const mint = async() => {
         //mint 之后 直接初始化。然后跳转战斗页面 
+
+
+
+        try {
+
+            const tx = await ERC721((window as any).provider ).safeMint(localStorage.account,{ value: ethers.utils.parseEther(currentId+'') });
+            await tx.wait();
+            const tx2 = await Game((window as any).provider ).initBattleTeam(currentId);
+            await tx2.wait();
+
+            nav(`/arena/${currentId}`)
+        } catch (error) {
+
+            console.log(error)
+            
+        }
+
         //判断当前id 是否被mint。如果被Mint 修改按钮文字 直接去战斗 else mint 
-        nav(`/arena/${currentId}`)
     }
 
     return (

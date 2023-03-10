@@ -1,7 +1,7 @@
 import React, { ReactElement, useState, useEffect, useRef } from 'react';
 import { ethers, Signer } from 'ethers';
 import Loading from '../../components/loading';
-import ctx  from '../../components/store/'
+import ctx  from '../../components/store'
 import "./index.scss"
 const Vault = ()=>{
 
