@@ -166,6 +166,7 @@ const Arena = () => {
 
     return (
         <React.Fragment>
+            {/* <Loading/> */}
             <audio ref={audioRefAttack} src={mp3Attack}/>
             <h1 className="neonText">🗽 大 闹 天 宫 </h1>
             <div className="arena">

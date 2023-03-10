@@ -16,7 +16,7 @@ function Loading(props:propsType) {
         <div className={`overlay ${heroShaking ? ' shake' : ''}`}>
             <div className="box">
                 <div className="progess">
-                <p>{props.status == 'loading'? 'loading ...':'Success'}</p>
+                <p>{props.status !== 'loading'? 'loading ...':'Success'}</p>
                     <Progress percent={percent} strokeColor={{ '0%': '#108ee9', '100%': '#87d068' }}  status="active"/>
                 </div>
                 <img src={require(`../assets/loading.gif`)} alt="" width={300}/>
