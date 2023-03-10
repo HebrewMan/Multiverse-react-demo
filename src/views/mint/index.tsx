@@ -1,11 +1,12 @@
-import React, { ReactElement, useState, useRef } from 'react';
+import React, { ReactElement, useState, useRef,useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 
-import { ethers, Signer } from 'ethers';
-import { ERC721 ,Game} from '../../contracts'
+import { ethers,  } from 'ethers';
+import { ERC721 ,Game, Signer_} from '../../contracts'
 import "../../css/button.css"
 import Hero from "./hero";
 import Loading from '../../components/loading';
+import ContextStore from '../../components/store/index';
 interface Props { }
 
 interface HeroType {
@@ -16,11 +17,26 @@ interface HeroType {
     src: string;
 }
 
-const Init: React.FC<Props> = (props) => {
+const Mint: React.FC<Props> = (props) => {
 
     const nav = useNavigate()
 
-    const [currentId, setCurrentId] = useState(2);
+    const [loadingStatus,setLoadingStatus] = useState('');
+
+    const closeLoading = ()=>setTimeout(()=>setLoadingStatus(''),3000);
+
+    let [currentId, setCurrentId] = useState(1);
+
+    useEffect(()=>{
+            getCurrentTokenId()
+    },[])
+
+    const getCurrentTokenId =async ()=>{
+        const signer = await Signer_();
+        currentId = (await ERC721(signer).balanceOf(localStorage.account))*1;
+        console.log(currentId,99999)
+        setCurrentId(currentId)
+    }
 
     const herosDatas: HeroType[] = [
         { tokenId: 1, name: "剑 侠 客", pa: 50, hp: 100, src: require(`../../assets/jianxiake/zhan2.gif`) },
@@ -28,49 +44,51 @@ const Init: React.FC<Props> = (props) => {
         { tokenId: 3, name: "神 天 兵", pa: 150, hp: 300, src: require(`../../assets/shentianbing/zhan2.gif`) },
     ]
 
-    const changeId = (id: number) => setCurrentId(id);
+    const changeId = (id: number) => id;
     
 
-    const heroHtmls: ReactElement[] = herosDatas.map((item: HeroType, index: number) => (
-        <Hero  key={index} change={changeId} heroData={item} currentId={currentId} />
-    ));
-
-
     const mint = async() => {
-        //mint 之后 直接初始化。然后跳转战斗页面 
-
-
-
-        try {
-
-            const tx = await ERC721((window as any).provider ).safeMint(localStorage.account,{ value: ethers.utils.parseEther(currentId+'') });
-            await tx.wait();
-            const tx2 = await Game((window as any).provider ).initBattleTeam(currentId);
-            await tx2.wait();
-
-            nav(`/arena/${currentId}`)
-        } catch (error) {
-
-            console.log(error)
-            
+        //如果当前id 是3 就显示去战斗 fighting
+        if(currentId==3){
+            nav(`/train`);
+            return;
         }
-
-        //判断当前id 是否被mint。如果被Mint 修改按钮文字 直接去战斗 else mint 
+        try {
+            setLoadingStatus('loading');
+            const tx = await ERC721((window as any).provider ).safeMint(localStorage.account,{ value: ethers.utils.parseEther(currentId+1+'') });
+            tx.wait().then(()=>{
+                setLoadingStatus('Success');
+                closeLoading()
+            }).catch(()=>{
+                setLoadingStatus('fail');
+                closeLoading()
+            })
+            setCurrentId(currentId+1);
+            
+            // nav(`/arena/${currentId}`)
+        } catch (error) {
+            setLoadingStatus('fail');
+            console.log(error)
+            closeLoading()
+        }
     }
 
     return (
         <React.Fragment>
-            <h1 className="neonText">
-            💂‍♂️ 点 将 大 会 
-            </h1>
-            <div className='heros'>
-                {heroHtmls}
+           <Loading status={loadingStatus} />
+            <h1 className="neonText">💂‍♂️ 点 将 大 会 </h1>
+            <div className="text" style={{display:currentId==3?'':'none'}}>
+             <h5>你已经拥有3个英雄去</h5>
+             <h5>快消灭敌人吧~</h5>
+            </div>
+            <div className='mints' style={{display:currentId==3?'none':''}}>
+                <Hero change={changeId} heroData={currentId==3? herosDatas[2]:herosDatas[currentId]} currentId={888} />
             </div>
             <div style={{ textAlign: 'center' }}>
-                <button onClick={mint}>Mint</button>
+                <button onClick={mint}>{currentId==3?'Fight':'mint' }</button>
             </div>
         </React.Fragment>
     );
 }
 
-export default Init;
+export default Mint;
