@@ -7,18 +7,22 @@ import Routers from './router';
 import Tips from './components/Tips';
 import Header from './components/Header';
 import { Watermark } from 'antd';
+import {MyContext} from './components/store';
+import App from './App';
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
 );
+
 root.render(
+  <App/>
   // <React.StrictMode>
-    <BrowserRouter>
-      <Header />
-      <Watermark content="HebrewMan">
-        <Routers />
-        <Tips />
-      </Watermark>
-    </BrowserRouter>
+    // <BrowserRouter>
+    //   <Header />
+    //   <Watermark content="HebrewMan">
+    //     <Routers />
+    //     <Tips />
+    //   </Watermark>
+    // </BrowserRouter>
  
 );
 

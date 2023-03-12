@@ -1,7 +1,12 @@
-import React  from "react";
 
-const ContextStore = React.createContext({
-    bkMp3:'',
-    play:false,
-})
-export default ContextStore;
+import { createContext } from 'react';
+
+type ContextProps = {
+  milk: number;
+   setMilk: (value: number) => void;
+ };
+ 
+ export const MyContext = createContext<ContextProps>({
+  milk: 0,
+  setMilk: () => {},
+ });
