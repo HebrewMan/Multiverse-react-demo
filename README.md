@@ -46,9 +46,15 @@ You can learn more in the [Create React App documentation](https://facebook.gith
 To learn React, check out the [React documentation](https://reactjs.org/).
 
 
-
-### test 
-
-1. nav (mint,战斗，连接钱包，金库页面claim)
-2. 战斗背景 Hero (展示) 血量攻击力 动画特效
-3. 音效 
+### Game flow
+1. Open http://43.139.4.72/ with chrome browser
+2. Check whether the metamask wallet is installed.
+3. Switch to the AITD test network network.
+4. Mint routes mint out (3) heroes.
+5. Jump to the Train training ground and lead the hero to participate in the training After the training is over
+6. Jump to the Arena to fight the enemy (Yang Jian)
+7. (2 buttons) "Attack" "Heal". The HP attack power attributes of heroes and enemies are obtained from the chain.
+8. Click to attack After the user signs, the attack can be launched.
+9. After the hero is injured, he can click "heal" to heal (for the first healing, he needs to authorize his Milk milk) and then heal.
+10. After defeating the enemy Yang Jian, go to the Vault to receive the battle reward milk and click ('claim')
+11. The front end of the "release" function is currently not open. After opening (users will get 50% of the hero's price in AITD as a release reward)

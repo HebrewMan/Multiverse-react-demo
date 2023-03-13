@@ -16,15 +16,15 @@ const Header: any = (props: any) => {
 
     const [isPlaying, setIsPlaying] = useState(false);
     const audioRef = useRef<HTMLAudioElement>(null);
-    const [mp3, setMp3] = useState('index');
+    const {mp3, setMp3} = useContext(MyContext);
 
-    const [path, setPath] = useState<any>('')
+    const { path,setPath } = useContext(MyContext);
 
     const paths = [
         { path: 'index', name: '🥽', },
         { path: 'mint', name: 'Mint 💎', },
         { path: 'train', name: 'Train 🥋', },
-        { path: 'arena', name: 'Arena🤺', },
+        // { path: 'arena', name: 'Arena🤺', },
         { path: 'vault', name: 'Vault 💸', },
     ]
 
@@ -34,8 +34,8 @@ const Header: any = (props: any) => {
     } 
 
     const changePath = (item: string,tokenId?:number) => {
-        setMp3(item);
-        if(item != 'arena'){
+        if(item != 'arena'&&item != 'arena'){
+            setMp3(item);
             setPath(item);
             nav('/'+item);
             setIsPlaying(true);
@@ -59,7 +59,7 @@ const Header: any = (props: any) => {
 
     async function connetToNetwork() {
         const { ethereum } = (window as any);
-        if (ethereum && account == '') {
+        if (ethereum && account === '') {
 
             let web3Provider: any;
             web3Provider = new ethers.providers.Web3Provider(ethereum);
@@ -89,7 +89,7 @@ const Header: any = (props: any) => {
                 <audio ref={audioRef} src={require(`../assets/mp3/${mp3}.mp3`)} loop={true}/>
                 <p className="nav-item">
                     {paths.map(item=>
-                        <span onClick={e => changePath(item.path)} key={item.name} className={path == item.path ? 'cur' : ''}>{item.name}</span>
+                        <span onClick={e => changePath(item.path)} key={item.name} className={path === item.path ? 'cur' : ''}>{item.name}</span>
                     )}
                 </p>
                 <p className="nav-item2">

@@ -5,7 +5,6 @@ import erc721 from '../abis/Hero.json';
 import game from '../abis/Game.json';
 import vault from '../abis/Vault.json';
 
-
 /**
  * goerli network
  * Hero 0xe6f4e4B4ab1bfDD62FFE568B58B4C1488B32FC7a
@@ -16,19 +15,27 @@ import vault from '../abis/Vault.json';
 
 /**
  * Aitd test network
-    vault:'0xf1040e708a06595b3F61DBaF7435bb5Af2cD49F7',
-    hero:'0xA17930a20F126E092945968Bd0AcFFd347E5505C',
-    milk:'0x735C84A0C206364aDFEf38AE4203dEF7db25276a',
-    game:'0x79736cb4761E710b3fbD4bdC0eE428d2988479dB',
+    vault:'0x7Bfe878628647858C3B3b3372C2A461D898ADC0A',
+    hero:'0x828B485fB8da5954a067e8A3e6BDBbdD1475fe97',
+    milk:'0xE4117e3dEcD55a7c0f5d7cF580d485204438E685',
+    game:'0x62c1Dd517eC7DC689358e073f9E7B9Eea8675Dae',
  */
 
-const addresses = {
-    vault:'0xf1040e708a06595b3F61DBaF7435bb5Af2cD49F7',
+    /*
+
+    local test
+       vault:'0x1735aA55DC4b51F6BE1F0a451256CF4462f7bec4',
     hero:'0xA17930a20F126E092945968Bd0AcFFd347E5505C',
     milk:'0x735C84A0C206364aDFEf38AE4203dEF7db25276a',
     game:'0x79736cb4761E710b3fbD4bdC0eE428d2988479dB',
-}
+    */
 
+const addresses = {
+    vault:'0x7Bfe878628647858C3B3b3372C2A461D898ADC0A',
+    hero:'0x828B485fB8da5954a067e8A3e6BDBbdD1475fe97',
+    milk:'0xE4117e3dEcD55a7c0f5d7cF580d485204438E685',
+    game:'0x62c1Dd517eC7DC689358e073f9E7B9Eea8675Dae',
+}
 
 const ERC20 = (provider:Signer)=>{
     return new ethers.Contract(addresses.milk,erc20,provider);//game edit task infoc

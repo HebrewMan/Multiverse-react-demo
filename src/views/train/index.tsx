@@ -1,10 +1,10 @@
-import React, { ReactElement, useState ,useEffect} from 'react';
+import React, { ReactElement, useState ,useEffect,useContext} from 'react';
 import { useNavigate } from 'react-router-dom';
 
-import { ethers } from 'ethers';
 import "../../css/button.css"
 import Hero from "../mint/hero";
-import {Game,Signer_} from '../../contracts'
+import {Game,ERC721,Signer_} from '../../contracts'
+import {MyContext} from '../../components/store';
 import Loading from '../../components/loading';
 interface Props { }
 
@@ -19,8 +19,13 @@ interface HeroType {
 const Train: React.FC<Props> = (props) => {
 
     const nav = useNavigate()
+
+    const {setPath} = useContext(MyContext);
     
     const [currentId, setCurrentId] = useState(2);
+
+    const [nfts,setNfts] = useState(0);
+    const [btnText,setBtnText] = useState('train');
 
     const [loadingStatus,setLoadingStatus] = useState('');
     const closeLoading = ()=> setTimeout(()=>setLoadingStatus(''),3000)
@@ -28,6 +33,17 @@ const Train: React.FC<Props> = (props) => {
     const [activated1,setActivated1] = useState(false);
     const [activated2,setActivated2] = useState(false);
     const [activated3,setActivated3] = useState(false);
+
+    useEffect(()=>{
+        getCurrentTokenId()
+    },[])
+
+    const getCurrentTokenId =async ()=>{
+        const signer = await Signer_();
+        let nfts = (await ERC721(signer).balanceOf(localStorage.account))*1;
+        setBtnText('mint');
+        setNfts(nfts);
+    }
 
     const getActivateds=async()=>{
         const signer = await Signer_();
@@ -44,7 +60,6 @@ const Train: React.FC<Props> = (props) => {
         getActivateds();
     })
  
-    const [btnText,setBtnText] = useState('train');
 
     const herosDatas: HeroType[] = [
         { tokenId: 1, name: "剑 侠 客", pa: 50, hp: 100, src: require(`../../assets/jianxiake/gongji.gif`) },
@@ -58,9 +73,13 @@ const Train: React.FC<Props> = (props) => {
     };
 
     const checkActivated = (id:number)=>{
-        if(id==1)activated1?setBtnText('fight'): setBtnText('train');
-        if(id==2)activated2?setBtnText('fight'): setBtnText('train');
-        if(id==3)activated3?setBtnText('fight'): setBtnText('train');
+        if(nfts!==3){
+            setBtnText('mint')
+            return;
+        }
+        if(id===1)activated1?setBtnText('fight'): setBtnText('train');
+        if(id===2)activated2?setBtnText('fight'): setBtnText('train');
+        if(id===3)activated3?setBtnText('fight'): setBtnText('train');
     }
     
     const heroHtmls: ReactElement[] = herosDatas.map((item: HeroType, index: number) => (
@@ -69,19 +88,28 @@ const Train: React.FC<Props> = (props) => {
 
     const train = async() => {
         //init 之后 直接初始化。然后跳转战斗页面 
+
+        if(nfts!==3){
+            nav(`/mint`);
+            setPath('mint')
+            return;
+        }
        
         try {
 
-            if(btnText == 'fight'){
+            if(btnText === 'fight'){
+                // setMp3('arena')
                 nav(`/arena/${currentId}`)
+                setPath('arena')
                 return;
             }
             setLoadingStatus('loading');
-            const tx = await Game((window as any).provider ).initBattleTeam(currentId);
-            
+
+            const tx = await Game((window as any).provider).initBattleTeam(currentId);
             tx.wait().then(()=>{
                 setLoadingStatus('Success');
-                setCurrentId(currentId+1);
+                if(nfts!==3)setNfts(nfts+1);
+                setBtnText('fight')
                 closeLoading()
             }).catch(()=>{
                 setLoadingStatus('fail');
@@ -102,7 +130,11 @@ const Train: React.FC<Props> = (props) => {
             <h1 className="neonText">
             🎖 誓 师 大 会
             </h1>
-            <div className='heros'>
+            <div className="text" style={{display:nfts!==3?'':'none'}}>
+             <h5>当前拥有的英雄不足3名</h5>
+             <h5>快去MINT英雄吧~</h5>
+            </div>
+            <div className='heros' style={{display:nfts===3?'':'none'}}>
                 {heroHtmls}
             </div>
             <div style={{ textAlign: 'center' }}>

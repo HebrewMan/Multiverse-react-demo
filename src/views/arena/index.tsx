@@ -1,4 +1,4 @@
-import React, { ReactElement, useState, useEffect, useRef } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import HealthBar from "../../components/HealthBar";
 import "./index.scss"
 
@@ -50,7 +50,6 @@ const Arena = () => {
     const [enemyStatus, setEnemyStatus] = useState('zhan');
     const [enemyShaking, setEnemyShaking] = useState(false);
    
-
     const audioRef = useRef<HTMLAudioElement>(null);
     const audioRefAttack = useRef<HTMLAudioElement>(null);
     const [mp3, setMp3] = useState(heroDeadMp3);
@@ -61,7 +60,6 @@ const Arena = () => {
         { name: "龙 太 子", pa: 100, hp: 200, src: require(`../../assets/longtaizi/${heroStatus}.gif`) },
         { name: "神 天 兵", pa: 150, hp: 300, src: require(`../../assets/shentianbing/${heroStatus}.gif`) },
     ]
-
 
     let [heroHp, setHeroHp] = useState(herosDatas[tokenId - 1].hp);
     let [enemyHp, setEnemyHp] = useState(300);
@@ -80,13 +78,7 @@ const Arena = () => {
         getHps();
     },[])
 
-    const [enemyInfo, setEnemyInfo] = useState<HeroType>({
-        name: '杨 戬',
-        pa: 100,
-        hp: 300,
-        status: 'zhan',
-        src: ''
-    });
+    const enemyPa =  100;
     
     const approve =async()=>{
         try {
@@ -146,7 +138,7 @@ const Arena = () => {
 
 
     const attack = async() => {
-        if (heroHp <= 0) {
+        if (heroHp <= 0 || enemyHp<=0) {
             alert('血量不足~')
             return;
         }
@@ -212,6 +204,7 @@ const Arena = () => {
                 audioRef.current?.play();
                 return;
             }
+
             setHeroStatus("zhan");//英雄准备挨打
 
             setMp3Attack(npcAttack);
@@ -226,7 +219,10 @@ const Arena = () => {
 
         setTimeout(() => {
             setHeroShaking(true);
-            heroHp -= enemyInfo.pa;
+            if(enemyHp>0){
+                heroHp -= enemyPa;
+            }
+           
             if (heroHp <= 0) {
                 setMp3(heroDeadMp3);
                 audioRef.current?.play();
@@ -276,7 +272,7 @@ const Arena = () => {
             </div>
 
             <div className='btns' style={{ textAlign: 'center' }}>
-                <button onClick={approved? heal:approve}>{approved?'👨‍⚕️ Heal':'👨‍⚖️ Heal'}</button>
+                <button onClick={approved? heal:approve}>{approved?'🥛 Heal':'👨‍⚖️ Heal'}</button>
                 <button onClick={attack} >🤺 attack</button>
             </div>
 

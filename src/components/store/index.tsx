@@ -2,11 +2,19 @@
 import { createContext } from 'react';
 
 type ContextProps = {
-  milk: number;
-   setMilk: (value: number) => void;
+    path:string,
+    milk: number;
+    mp3:string,
+    setPath:(value: string) => void;
+    setMilk: (value: number) => void;
+    setMp3:(value: string) => void;
  };
  
  export const MyContext = createContext<ContextProps>({
-  milk: 0,
-  setMilk: () => {},
+    path:'',
+    milk: 0,
+    mp3:'',
+    setPath: () => {},
+    setMilk: () => {},
+    setMp3:() => {},
  });

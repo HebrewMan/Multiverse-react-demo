@@ -1,11 +1,13 @@
-import React, { ReactElement, useState, useRef,useEffect } from 'react';
+import React, { useState, useContext,useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 
 import { ethers,  } from 'ethers';
-import { ERC721 ,Game, Signer_} from '../../contracts'
+import { ERC721 , Signer_} from '../../contracts'
 import "../../css/button.css"
 import Hero from "./hero";
 import Loading from '../../components/loading';
+import {MyContext} from '../../components/store';
+
 interface Props { }
 
 interface HeroType {
@@ -19,6 +21,7 @@ interface HeroType {
 const Mint: React.FC<Props> = (props) => {
 
     const nav = useNavigate()
+    const { path,setPath } = useContext(MyContext);
 
     const [loadingStatus,setLoadingStatus] = useState('');
 
@@ -48,13 +51,14 @@ const Mint: React.FC<Props> = (props) => {
 
     const mint = async() => {
         //如果当前id 是3 就显示去战斗 fighting
-        if(currentId==3){
+        if(currentId===3){
             nav(`/train`);
+            setPath('train')
             return;
         }
         try {
             setLoadingStatus('loading');
-            const ether = currentId==0? '1' : currentId+'';
+            const ether = currentId===0? '1' : currentId+1+'';
             const tx = await ERC721((window as any).provider ).safeMint(localStorage.account,{ value: ethers.utils.parseEther(ether)});
             tx.wait().then(()=>{
                 setLoadingStatus('Success');
@@ -77,15 +81,15 @@ const Mint: React.FC<Props> = (props) => {
         <React.Fragment>
            <Loading status={loadingStatus} />
             <h1 className="neonText">💂‍♂️ 点 将 大 会 </h1>
-            <div className="text" style={{display:currentId==3?'':'none'}}>
+            <div className="text" style={{display:currentId===3?'':'none'}}>
              <h5>你已经拥有3个英雄去</h5>
-             <h5>快消灭敌人吧~</h5>
+             <h5>快去消灭敌人吧~</h5>
             </div>
-            <div className='mints' style={{display:currentId==3?'none':''}}>
-                <Hero change={changeId} heroData={currentId==3? herosDatas[2]:herosDatas[currentId]} currentId={888} />
+            <div className='mints' style={{display:currentId===3?'none':''}}>
+                <Hero change={changeId} heroData={currentId===3? herosDatas[2]:herosDatas[currentId]} currentId={888} />
             </div>
             <div style={{ textAlign: 'center' }}>
-                <button onClick={mint}>{currentId==3?'Fight':'mint' }</button>
+                <button onClick={mint}>{currentId===3?'Fight':'mint' }</button>
             </div>
         </React.Fragment>
     );
