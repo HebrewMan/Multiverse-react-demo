@@ -10,15 +10,12 @@ import {MyContext} from './store';
 const Header: any = (props: any) => {
 
     const nav = useNavigate();
-    const { milk,setMilk } = useContext(MyContext);
-
     const location = useLocation();
 
     const [isPlaying, setIsPlaying] = useState(false);
     const audioRef = useRef<HTMLAudioElement>(null);
-    const {mp3, setMp3} = useContext(MyContext);
 
-    const { path,setPath } = useContext(MyContext);
+    const { path,mp3, milk,setMilk,setPath,setMp3 } = useContext(MyContext);
 
     const paths = [
         { path: 'index', name: '🥽', },
